@@ -1,0 +1,32 @@
+{
+  "name": "sunrise",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.1.0",
+    "@tanstack/react-query": "^4.29.19",
+    "bootstrap": "^5.3.2",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-bootstrap": "^2.10.0",
+    "react-dom": "^18",
+    "react-redux": "^9.1.0",
+    "react-redux-toastr": "^7.6.13",
+    "sass": "^1.70.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-redux-toastr": "^7.6.6",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
+  }
+}

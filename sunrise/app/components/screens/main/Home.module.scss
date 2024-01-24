@@ -1,0 +1,30 @@
+.wrapper{
+    padding: 40px;
+    max-width: 1200px;
+    h1{
+        margin-bottom: 20px;
+    }
+    a{
+        text-decoration: none;
+        display: block;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.lists{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+}
+
+.buttons{
+    padding-left: 20px;
+    width: 100%;
+    justify-content: space-between;
+    button{
+        &:not(:last-child){
+            margin-right: 10px;
+        }
+    }
+}
