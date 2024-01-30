@@ -12,8 +12,7 @@ export const useList = (page = 1, id=1) => {
 
   const { data:modal, isLoading:isModalLoading, isError:isModalError } = useQuery(['modal', id], () => ListService.getList(id), {
     select: ({ data }) => data,
-    keepPreviousData: true,
-    enabled: router.query.id !== undefined
+    enabled: router.query.item !== undefined
   });
 
   return {

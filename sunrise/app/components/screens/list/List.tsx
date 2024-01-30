@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 
 import ListCard from "./ListCard";
@@ -8,7 +8,13 @@ import { IList } from "./list.interface";
 import styles from "../main/Home.module.scss";
 
 const List: FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(() => {
+    if (typeof window !== "undefined") {
+      const storedPage = localStorage.getItem("currentPage");
+      return storedPage ? parseInt(storedPage) : 1;
+    }
+    return 1;
+  });
 
   const { data, isLoading, isError } = useList(currentPage);
 
@@ -19,6 +25,12 @@ const List: FC = () => {
   const handlePrevPage = () => {
     setCurrentPage((prev) => Math.max(prev - 1, 1));
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("currentPage", currentPage.toString());
+    }
+  }, [currentPage]);
 
   return isLoading ? (
     <h1>Загрузка...</h1>
